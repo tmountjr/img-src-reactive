@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { useImageUrl } from '~~/composables/ImageUrl';
-const { cip } = useImageUrl()
+const props = defineProps({
+  simple: {
+    type: Boolean,
+    default: () => false
+  }
+})
+const { cip } = useImageUrl(props.simple)
 </script>
 
 <template>
